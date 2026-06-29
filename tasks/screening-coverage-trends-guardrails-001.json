@@ -1,0 +1,38 @@
+{
+  "id": "screening-coverage-trends-guardrails-001",
+  "title": "Cancer data & compliance guardrail specification (the contract all code/content implements)",
+  "project": "screening-coverage-trends",
+  "type": "design-spec",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["cancer", "public-health", "open-data", "data-science", "health-communication"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "screening-coverage-trends turns OPEN, AGGREGATE cancer-screening-coverage data (CDC BRFSS/PLACES/NHIS, NCI/CDC State Cancer Profiles, UK OGL releases, Eurostat, OECD, AIHW, StatCan) into a harmonized open TREND dataset plus plain-language explainers. The dominant risks are legal (using a non-open/NC source as if open - e.g. WHO GHO is CC BY-NC-SA 3.0 IGO, GLOBOCAN/IARC is non-commercial), statistical (readers misreading self-report vs measured vs model-based estimates, changing denominators, suppressed small cells), and clinical (patient-facing content drifting into medical advice). The project is medium risk overall but its patient-facing surface is HIGH and ships only after oncologist + patient-advocate sign-off. This cold-start task writes the binding compliance/guardrail contract that all later code and content must implement and be tested against. No beneficiary partner and no expert reviewers are yet secured.",
+  "objective": "Write the authoritative cancer data & compliance guardrail specification: the four binding guardrails (aggregate/de-identified/open-access data only; per-source license verification + provenance on every assertion; patient-facing = education-only HIGH tier with 'not medical advice' framing and blocking oncologist + patient-advocate sign-off; crisis/helpline info independently verified), the misread checklist, the no-causal-verb and not-medical-advice lints, the small-cell/re-identification rules, the NC/SA cite-only-or-exclude default, and the CI build-breakers + publish gate that tasks 003-005 and all M3 content must satisfy.",
+  "acceptanceCriteria": [
+    "Encodes the four binding guardrails as concrete, testable rules, including that controlled-access and individual-level/identifiable data are out of scope and excluded at triage (aggregate/de-identified/open-access only)",
+    "Requires per-source license verification with a recorded license id + URL + clause and explicit permitsDerivatives evidence before any redistribution; missing/unclear/NC-SA terms default to cite-only or exclude, never default-allow",
+    "Requires provenance on every published assertion and chart, enforced as a 100% CI provenance-coverage build-breaker, plus license-status, schema-validity, reproducible-from-snapshots, small-cell-guard, and helpline-verification CI gates",
+    "Defines the patient-facing HIGH-tier rules: education only, persistent 'general information, not medical advice - consult your care team' notice, no personalized/eligibility/diagnosis framing, guideline statements attributed to USPSTF/ACS/national bodies with version/date, and BLOCKING oncologist + patient-advocate sign-off recorded before publish",
+    "Defines the misread checklist (denominator stated; basis self-report/measured/model-based labeled; model-based small-area flagged; no causal verbs on associational data; no advice verbs; guideline body cited) and the no-causal-verb and not-medical-advice lints",
+    "Defines the small-cell / re-identification rules: honor source suppression, apply an own min-cell + min-denominator threshold, suppress-and-label never impute, and no cross-dataset linkage",
+    "Requires crisis/helpline/support pointers to be independently verified (number, region, hours, language) with a dated verification record and a re-verification cadence",
+    "Reviewed and recorded as the contract that screening-coverage-trends-repo-003, -schema-004, -gate-005 and all M3 patient-facing content implement and are tested against"
+  ],
+  "resources": [
+    "planning/projects/screening-coverage-trends/PLAN.md",
+    "CLAUDE.md",
+    "docs/good-deed-definition.md",
+    "packages/schema/src/schemas.ts",
+    "planning/ROADMAP.md",
+    "planning/projects/open-data-datasheets/PLAN.md"
+  ],
+  "output": "A reviewed compliance/guardrail specification document defining the four binding cancer guardrails, the license + provenance rules (incl. NC/SA cite-only-or-exclude default), the misread checklist + lints, the small-cell/re-identification rules, the verified-helpline rule, the CI build-breakers, and the HIGH-tier publish gate with blocking oncologist + advocate sign-off - the contract that the repo/CI, canonical schema, source gate, and all patient-facing content implement and are verified against.",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}
