@@ -1,0 +1,36 @@
+{
+  "id": "screening-coverage-trends-ops-020",
+  "title": "Refresh runbook + annual release cadence + re-review/re-verify cadence + maintenance rotation",
+  "project": "screening-coverage-trends",
+  "type": "maintenance",
+  "lane": "donated",
+  "priority": "low",
+  "domain": ["cancer", "public-health", "project-governance", "devops"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "After delivery (M5), the project must remain current as source agencies publish new data vintages, guidelines are updated, and helpline details change. Without a documented runbook and cadence, the dataset goes stale, explainers drift from current guidelines, and helpline pointers become incorrect — all of which are risks to beneficiaries. The M6 runbook must also define a gated expansion process for adding new indicators, geographies, or languages, since each expansion requires its own license gate, statistical review, and (for new patient-facing content) expert sign-off. Builds on the delivery evidence from task 019.",
+  "objective": "Write and publish the refresh runbook: data refresh from new source vintages, annual release cadence, content re-review cadence (guideline re-verification + re-sign-off; helpline re-verification), named maintenance rotation + steward, and a gated expansion process for adding indicators, geographies, or languages.",
+  "acceptanceCriteria": [
+    "Runbook covers the data refresh cycle: re-fetch from source (new vintage), re-snapshot with new SHA-256 and Wayback save, re-run pipeline, re-validate schema and provenance, re-check license status, version bump, and release",
+    "Annual release cadence defined and aligned to source vintage cycles (BRFSS/NHIS/PLACES/Eurostat/OECD update cycles); runbook specifies trigger conditions and steps",
+    "Content re-review cadence defined per annual release: guideline statements re-verified against USPSTF/ACS/national programs for each indicator (with version/date updated if changed); clinician + advocate re-sign-off for any changed patient-facing content (blocking)",
+    "Helpline re-verification cadence defined per annual release: each support/helpline pointer independently re-verified (number, region, hours, language) with a new dated verification record; past-due pointers flagged and blocked from publication until re-verified",
+    "Named maintenance rotation documented: at minimum a named maintainer (pipeline + source catalog) and a named steward (beneficiary relationships + adoption tracking + helpline re-verification); succession process defined",
+    "Gated expansion process documented for adding a new indicator, geography, or language: each expansion requires its own license gate artifact, statistical review, and (for new patient-facing content) full clinician + advocate sign-off; no expansion bypasses the gate",
+    "Staleness flags defined: each series carries a vintage date and a valid-until date; series past valid-until are flagged in the dataset and blocked from publication until refreshed",
+    "Maintainer + Steward + Clinician sign-off recorded before merge"
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/screening-coverage-trends-guardrails-001.json",
+    "tasks/screening-coverage-trends-handoff-019.json",
+    "CLAUDE.md"
+  ],
+  "output": "A committed refresh runbook covering: data refresh cycle, annual release cadence, guideline and helpline re-verification cadence, named maintenance rotation with succession, and a gated expansion process for new indicators/geographies/languages; Maintainer, Steward, and Clinician sign-offs recorded.",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}

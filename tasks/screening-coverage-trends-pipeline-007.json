@@ -1,0 +1,36 @@
+{
+  "id": "screening-coverage-trends-pipeline-007",
+  "title": "Fetch->snapshot->harmonize->trend+CI pipeline (one indicator)",
+  "project": "screening-coverage-trends",
+  "type": "code",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["cancer", "public-health", "open-data", "data-science"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "large",
+  "status": "open",
+  "context": "M1 requires a reproducible end-to-end pipeline that fetches published aggregate screening-coverage data, commits immutable checksummed snapshots, harmonizes to the canonical schema, and computes trend plus confidence/credible intervals from source standard errors. The pipeline must enforce aggregate-only access (no micro-data paths), 100% provenance coverage, and full reproducibility from cached snapshots in CI. This builds on the canonical schema (004) and proven gate (005). The first indicator is breast/mammography, US national and states, from accepted PD sources.",
+  "objective": "Implement the end-to-end fetch -> snapshot -> harmonize -> trend + CI pipeline for one indicator (breast/mammography, US national + states) from accepted public-domain sources. The pipeline must write immutable checksummed snapshots, harmonize to the canonical schema, compute trends and confidence/credible intervals from source standard errors, enforce aggregate-only access, and regenerate all outputs byte-stably from cached snapshots in CI.",
+  "acceptanceCriteria": [
+    "Pipeline fetches breast/mammography screening-coverage aggregates from accepted US PD sources (BRFSS and/or NHIS) using published aggregate APIs or table exports only; any code path that could reach micro-data or individual-level records is rejected at runtime",
+    "Every fetch writes an immutable, checksummed (SHA-256) source snapshot with provenance metadata (source URL, publisher, retrieval timestamp, dataset version, license id + URL, Wayback save URL); analysis runs against snapshots, not live sources",
+    "Harmonization maps each series to the canonical trend-series schema (task 004) with all required fields populated and harmonizationScore >= 90 per series",
+    "Trend computation is transparent and documented: trend over time, change vs. baseline, confidence/credible intervals propagated from source standard errors; no smoothing or modeling beyond what is documented and reproducible; model-based source estimates (e.g., PLACES) carry their model caveats intact",
+    "CI regenerates all dataset outputs byte-stably from committed snapshots with no live-source network access; provenance-coverage gate (100%) and license-status gate both pass",
+    "Aggregate-only access protocol enforced in code: any attempt to fetch individual-level or controlled-access data raises an error",
+    "Statistical reviewer sign-off recorded before merge"
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/screening-coverage-trends-guardrails-001.json",
+    "tasks/screening-coverage-trends-schema-004.json",
+    "tasks/screening-coverage-trends-gate-005.json",
+    "CLAUDE.md"
+  ],
+  "output": "A merged PR implementing the fetch -> snapshot -> harmonize -> trend + CI pipeline for breast/mammography (US national + states) from accepted PD sources; CI green with byte-stable reproducibility from snapshots, 100% provenance coverage, and license-status gate passing; statistical reviewer sign-off recorded.",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

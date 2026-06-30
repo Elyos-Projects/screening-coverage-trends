@@ -1,0 +1,37 @@
+{
+  "id": "screening-coverage-trends-api-025",
+  "title": "Read-only static data API over the open dataset",
+  "project": "screening-coverage-trends",
+  "type": "code",
+  "lane": "donated",
+  "priority": "low",
+  "domain": ["cancer", "public-health", "open-data", "data-science"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "A static JSON-based API (pre-generated files served from a CDN or static hosting) would make the screening-coverage-trends dataset programmatically accessible to data reusers, journalists, and downstream tools without requiring them to download and parse the full dataset. This is a low-risk backlog/future task: the API is read-only, static (no server runtime), contains no PII, and serves only aggregate dataset values with provenance preserved in the response. It complements the dashboard (task 017) for programmatic access use cases.",
+  "objective": "Build a read-only static JSON API over the open cancer-screening-coverage trend dataset: pre-generated JSON files served statically, no server-side runtime, no PII, provenance preserved in responses, consistent with the canonical schema.",
+  "acceptanceCriteria": [
+    "API is implemented as pre-generated static JSON files (no server-side runtime, no database, no PII); served via static hosting (e.g., GitHub Pages or CDN)",
+    "API endpoints cover at minimum: list of indicators, series by indicator, series by indicator + geography, and series by indicator + population breakdown",
+    "Each API response includes provenance metadata per series: source id, source URL, license, retrievedAt, snapshotRef — consistent with the canonical schema (task 004)",
+    "API contains no individual-level data, PII, or data below the small-cell suppression threshold; suppressed cells are indicated as suppressed in the response, not as values",
+    "API responses are consistent with the canonical dataset files and regenerated from the same pipeline (no separate data copy)",
+    "API is documented: endpoint listing, field descriptions, example responses, license (CC-BY-4.0 for data), attribution requirements",
+    "No credentials or API keys required to access the API at runtime",
+    "Maintainer and license reviewer sign-off recorded before merge"
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/screening-coverage-trends-guardrails-001.json",
+    "tasks/screening-coverage-trends-schema-004.json",
+    "tasks/screening-coverage-trends-dataset-009.json",
+    "CLAUDE.md"
+  ],
+  "output": "A merged PR adding a read-only static JSON API over the open dataset: pre-generated files, no runtime server, no PII, provenance in responses, suppressed cells labeled, documented with endpoint listing and attribution requirements, regenerated from the canonical pipeline; Maintainer and license reviewer sign-offs recorded.",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

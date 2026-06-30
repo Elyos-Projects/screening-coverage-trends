@@ -1,0 +1,38 @@
+{
+  "id": "screening-coverage-trends-i18n-021",
+  "title": "Translate explainers into additional languages",
+  "project": "screening-coverage-trends",
+  "type": "writing",
+  "lane": "donated",
+  "priority": "low",
+  "domain": ["cancer", "public-health", "health-communication", "translation"],
+  "riskTier": "high",
+  "urgent": false,
+  "deliverable": "translation",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "The English-language explainers (tasks 014, 015) serve audiences who read English, but cancer screening disparities affect communities that may be best served in other languages. Translating patient-facing educational content into additional languages is HIGH risk because: the 'not medical advice' framing must be preserved precisely in translation; health literacy and cultural framing differ across languages; and every translated version requires its own per-language credentialed oncology clinician and patient-advocate review — the same blocking sign-off required for the English originals. No target languages are confirmed; this is a backlog/future task pending language selection and reviewer availability.",
+  "objective": "Translate the English-language screening-coverage explainers into one or more additional languages selected based on beneficiary need and available per-language expert reviewers. Each translated version must carry the 'not medical advice' notice in the target language, pass a per-language misread checklist review, and receive per-language clinician and advocate sign-off (both blocking) before publication.",
+  "acceptanceCriteria": [
+    "Target language(s) selected based on confirmed beneficiary need and available per-language expert reviewers; no translation starts without both a per-language credentialed clinician and a per-language patient advocate secured",
+    "Each translated explainer preserves the full meaning and framing of the English source: no advice language introduced; 'This is general information, not medical advice — consult your care team' notice translated accurately and prominently placed",
+    "Each translated version passes a per-language misread checklist review covering the same items as the English checklist (denominator stated, basis labeled, model-based flagged, no causal verbs, no advice verbs, guideline body cited with version/date in the target language context)",
+    "Authoritative-guidance pointers updated to reference the appropriate national screening program or guideline body for the target-language audience, not just the US USPSTF/ACS (unless the audience is the same)",
+    "Verified support/helpline pointers updated for the target-language region and confirmed independently in the target language (number, region, hours, language) with a dated verification record",
+    "WCAG 2.2 AA and plain-language readability target met in the target language",
+    "Per-language oncologist sign-off recorded (clinical accuracy in target language) — BLOCKING per language",
+    "Per-language patient-advocate sign-off recorded (comprehension, tone, patient-serving framing in target language) — BLOCKING per language"
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/screening-coverage-trends-guardrails-001.json",
+    "tasks/screening-coverage-trends-explainer-014.json",
+    "tasks/screening-coverage-trends-explainer-015.json",
+    "tasks/screening-coverage-trends-helpline-016.json",
+    "CLAUDE.md"
+  ],
+  "output": "One or more translated explainer documents in the confirmed target language(s): 'not medical advice' notice preserved in translation, per-language misread checklist passed, guidance/helpline pointers localized, WCAG 2.2 AA met; per-language oncologist and patient-advocate sign-offs recorded (both blocking per language).",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}

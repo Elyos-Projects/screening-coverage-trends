@@ -1,0 +1,34 @@
+{
+  "id": "screening-coverage-trends-datasheet-010",
+  "title": "Data dictionary + Datasheet-for-Datasets + machine-readable metadata",
+  "project": "screening-coverage-trends",
+  "type": "writing",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["cancer", "public-health", "open-data", "data-documentation"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "Publishing a dataset without a data dictionary and standardized metadata documentation is a reuse barrier. The Datasheets for Datasets (Gebru et al.) framework provides a structured template covering motivation, composition, collection, preprocessing, uses, distribution, and maintenance. Machine-readable metadata (schema.org/Dataset) makes the dataset discoverable. This documentation is required before M1 is declared done and enables downstream data reusers, journalists, and the M3 explainer author to understand caveats, definitions, and limitations without contacting the maintainer.",
+  "objective": "Write and publish the data dictionary, Datasheet for Datasets, and machine-readable metadata for the breast/mammography trend dataset (task 009). The data dictionary must define every canonical field including indicator, population breakdowns, geography levels, basis enum, denominatorDef, suppression, and harmonizationScore. The Datasheet must answer all standard sections. Machine-readable metadata must use schema.org/Dataset.",
+  "acceptanceCriteria": [
+    "Data dictionary defines every field in the canonical trend-series schema (task 004): indicator enum, measure, all population breakdown fields (ageBand, sex, raceEthnicity, income, insurance, urbanRural), geography (level enum, code, name), period, value fields (pct, ciLow, ciHigh, basis enum), denominatorDef, suppression (suppressed, rule), caveats[], provenanceComplete, harmonizationScore — with description, type, allowed values, and required/optional status for each",
+    "Datasheet for Datasets (Gebru et al. framework) completed for the breast/mammography dataset: motivation, composition, collection process, preprocessing/cleaning/labeling, uses, distribution, and maintenance sections all answered",
+    "Datasheet explicitly documents: that all data is aggregate/de-identified public-domain; self-report basis and its limitations; break-in-series events; suppression rules applied; harmonizationScore definition and threshold; and the NC/SA cite-only policy for excluded sources",
+    "Machine-readable metadata published using schema.org/Dataset JSON-LD: name, description, url, license (CC-BY-4.0), creator, datePublished, variableMeasured, distribution fields populated",
+    "Documentation states clearly that the dataset contains population-level aggregate statistics only, not individual screening records, and that it is not intended for clinical decision-making",
+    "License/provenance reviewer sign-off recorded before publication"
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/screening-coverage-trends-dataset-009.json",
+    "tasks/screening-coverage-trends-schema-004.json",
+    "CLAUDE.md"
+  ],
+  "output": "Published data dictionary, Datasheet for Datasets (Gebru et al. format), and schema.org/Dataset JSON-LD machine-readable metadata for the breast/mammography trend dataset; all fields documented; aggregate-only and non-clinical-decision framing stated; license reviewer sign-off recorded.",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "screening-coverage-trends-outreach-006",
+  "title": "Beneficiary + expert-reviewer outreach (dated acquisition track)",
+  "project": "screening-coverage-trends",
+  "type": "research",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["cancer", "public-health", "open-data", "project-governance"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "No beneficiary partner and no expert reviewers (oncology clinician, patient advocate) are yet secured. Elyos measures success as delivered-not-merged, so outputs that no one adopts do not count. M3 patient-facing content is hard-gated on securing both a credentialed oncology clinician and a patient advocate as reviewers. The build-vs-mothball rule requires a named beneficiary by 2027-03-31 or the project pivots to an OER/open-data channel or mothballs. This cold-start outreach task creates a dated acquisition track and opens the first contact threads — required M0 exit criterion.",
+  "objective": "Create a dated outreach and acquisition track covering two tracks: (1) beneficiary outreach to candidate public-health programs, patient-advocacy orgs, newsrooms, library channels, and OER/data-literacy channels; (2) expert-reviewer outreach to credentialed oncology clinicians and patient advocates. Open at least one dated contact thread on each track and document the acquisition plan with the build-vs-mothball decision rule.",
+  "acceptanceCriteria": [
+    "A written outreach plan documents candidate beneficiary channels (state/local public-health screening programs, CDC/NCI-funded coalitions, patient-advocacy orgs, health/data newsroom desks, OER/data-literacy channels, open-data portals) with rationale for fit",
+    "A written outreach plan documents candidate expert-reviewer profiles for (a) a credentialed oncology clinician and (b) a patient advocate, with selection criteria and conflict-of-interest considerations",
+    "At least one dated beneficiary-outreach contact thread opened and documented with date, channel, contact point, and next-step owner",
+    "At least one dated expert-reviewer outreach thread opened for each required role (clinician, advocate) and documented with date, channel, contact point, and next-step owner",
+    "Documents the build-vs-mothball decision rule: if no named beneficiary is confirmed by 2027-03-31, the project pivots the last mile (dataset + toolkit to an OER/open-data channel as a reference deed) or mothballs to maintenance-only, recorded in governance",
+    "Acquisition track is committed as a living document with dated log entries; owner and review cadence named",
+    "verifiedNeed remains false; document notes the conditions under which it will flip to true (named beneficiary confirms adoption of a specific deliverable)"
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/screening-coverage-trends-guardrails-001.json",
+    "CLAUDE.md"
+  ],
+  "output": "A committed outreach and acquisition track document with dated contact threads for at least one beneficiary candidate and at least one expert-reviewer candidate per required role (clinician, advocate), plus the documented build-vs-mothball decision rule and acquisition cadence.",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}

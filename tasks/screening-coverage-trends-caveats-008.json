@@ -1,0 +1,36 @@
+{
+  "id": "screening-coverage-trends-caveats-008",
+  "title": "Caveat layer (self-report/measured/model-based, break-in-series, suppression)",
+  "project": "screening-coverage-trends",
+  "type": "code",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["cancer", "public-health", "data-science"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "Misreading a screening statistic is the top statistical risk in this project. The three main misreads are: (1) treating self-report estimates as measured values; (2) reading through a break-in-series caused by a guideline or denominator change; (3) interpreting a suppressed cell. The pipeline (task 007) produces series values, but those values must carry machine-readable caveats that render correctly into both dataset metadata and explainers. This caveat layer is the mechanism that prevents misreading and is enforced both in the dataset and in the misread-checklist lints.",
+  "objective": "Implement the machine-readable caveat layer for the pipeline: attach structured caveats to every trend series covering (a) basis (self-report/measured/model-based), (b) break-in-series events with explanation, (c) suppression flags for below-threshold cells, and (d) model-based small-area caveats for PLACES-derived estimates. Caveats must render into dataset metadata and be available for explainer authoring.",
+  "acceptanceCriteria": [
+    "Caveat schema extension implemented: every series record carries a structured caveats[] array with caveat type enum (basis-note|break-in-series|suppression|model-based-small-area|denominator-change|other), description, and affectedPeriods",
+    "basis field (self-report|measured|model-based) is required on every value record and propagated to the caveat layer; any series missing a basis field fails the schema-validation CI gate",
+    "Break-in-series events are detected and flagged with a caveat describing the change (guideline change, denominator/definition shift, survey redesign) and the affected periods; no trend line silently spans a break",
+    "Suppressed cells are labeled in the caveat layer with the suppression rule applied; suppressed cells are never imputed to a value, and below-threshold sub-group cells are labeled not imputed",
+    "Model-based small-area estimates (e.g., PLACES) carry a model-based-small-area caveat stating that estimates represent modeled values with uncertainty, not counts of identifiable people",
+    "Caveats are machine-readable in the dataset (JSON) and render into a human-readable caveat notice for explainer authoring; the misread-checklist lint can read caveat presence to enforce checklist items",
+    "Statistical reviewer sign-off recorded before merge"
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/screening-coverage-trends-guardrails-001.json",
+    "tasks/screening-coverage-trends-schema-004.json",
+    "tasks/screening-coverage-trends-pipeline-007.json",
+    "CLAUDE.md"
+  ],
+  "output": "A merged PR adding the machine-readable caveat layer to the pipeline: structured caveats[] on every series covering basis, break-in-series, suppression, and model-based-small-area events; caveats renderable into dataset metadata and explainer notices; schema-validation CI gate enforcing basis presence; statistical reviewer sign-off recorded.",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "screening-coverage-trends-newsroom-026",
+  "title": "\"Explainer-to-article\" reusable templates for newsrooms",
+  "project": "screening-coverage-trends",
+  "type": "writing",
+  "lane": "donated",
+  "priority": "low",
+  "domain": ["cancer", "public-health", "health-communication", "journalism"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "Journalists and health/data newsroom staff are a key beneficiary segment: they need accurate, attributable, reusable screening trend figures and explanation they can quote and build articles from. Reusable templates that show journalists how to correctly use the dataset and explainers — with proper attribution, correct statistical framing, and the 'not medical advice' guardrails respected in editorial context — reduce the risk of misreporting. These templates are medium risk (not patient-facing in the same direct way as the explainers, but health journalism influences public health behavior). They are education-only reference materials for journalists, not advice to patients.",
+  "objective": "Produce a set of reusable 'explainer-to-article' templates for newsrooms and journalists: showing how to correctly cite and use the screening-coverage-trends dataset and explainers in health journalism, with proper attribution, correct statistical framing, 'not medical advice' guardrail respected in editorial context, and provenance cited.",
+  "acceptanceCriteria": [
+    "Templates are framed as education-only reference materials for journalists; they explain how to use the dataset and explainers correctly in news articles, not how to give health advice to readers",
+    "Templates include: how to cite the dataset with correct attribution (CC-BY-4.0), how to describe screening coverage rates accurately (denominator, basis, uncertainty), how to avoid common misstatements (causal claims from trends, omitting denominator, not flagging self-report basis)",
+    "Templates include guidance on the 'not medical advice' guardrail in editorial context: recommending that newsroom articles include a note directing readers to their care provider for personal health decisions, consistent with responsible health journalism",
+    "Every figure example in the templates is provenance-cited to the screening-coverage-trends dataset with the correct source attribution chain (dataset -> source agency)",
+    "Templates do not reproduce or paraphrase NC/SA sources (WHO GHO, IARC/GLOBOCAN) as if they were open; only open licensed figures from the dataset are used in examples",
+    "Templates are factually reviewed for statistical accuracy: no example misrepresents a screening statistic; statistical reviewer sign-off recorded before publication"
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/screening-coverage-trends-guardrails-001.json",
+    "tasks/screening-coverage-trends-explainer-014.json",
+    "tasks/screening-coverage-trends-dataset-009.json",
+    "CLAUDE.md"
+  ],
+  "output": "A published set of 'explainer-to-article' newsroom templates: correct attribution and statistical framing guidance, 'not medical advice' guardrail in editorial context, provenance-cited figure examples from the open dataset only; statistical reviewer sign-off recorded.",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}

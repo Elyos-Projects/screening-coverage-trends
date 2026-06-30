@@ -1,0 +1,35 @@
+{
+  "id": "screening-coverage-trends-sources-002",
+  "title": "Source catalog v0 + per-source license classification + NC/SA policy decision",
+  "project": "screening-coverage-trends",
+  "type": "data",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["cancer", "public-health", "open-data", "data-governance"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "Before any cancer-screening-coverage data can be fetched or published, every candidate source must be evaluated for license, aggregation level, suppression rules, and compatibility with CC-BY-4.0 redistribution. The project's binding guardrails require per-source license verification recorded before any use. The dominant license trap is silently treating NC/SA sources (WHO GHO CC BY-NC-SA 3.0 IGO; IARC/GLOBOCAN NC) as open — so a fixed NC/SA policy decision must be merged as part of this task. No beneficiary partner or expert reviewers are yet secured.",
+  "objective": "Produce and merge source catalog v0: enumerate every candidate cancer-screening-coverage source with its publisher, indicator coverage, aggregation level, vintage, verified license, and triage outcome (accepted / cite-only / excluded). Record per-source permitsDerivatives evidence with clause and URL. Merge a fixed NC/SA policy decision covering WHO GHO, IARC/GLOBOCAN, and any future NC/SA sources.",
+  "acceptanceCriteria": [
+    "Enumerates candidate sources with publisher, indicator coverage, aggregation level (aggregate/de-identified only), vintage range, and verified license id + URL, sorted into accepted, cite-only/restricted, and excluded tiers",
+    "Records for every accepted source an explicit permitsDerivatives: true entry with the cited license clause and URL; missing or unclear evidence maps the source to cite-only or excluded, never default-allow",
+    "Accepted tier covers at minimum: CDC BRFSS, CDC PLACES, CDC/NCHS NHIS, NCI/CDC State Cancer Profiles, NCI Cancer Trends Progress Report (US public domain); NHS England/UKHSA cancer screening coverage (UK OGL v3); Eurostat screening indicators; AIHW (CC-BY, version confirmed); Statistics Canada Open Licence — each with attribution requirements noted",
+    "Cite-only/restricted tier covers at minimum: WHO GHO cervical screening (CC BY-NC-SA 3.0 IGO) and IARC/GLOBOCAN (non-commercial) — referenced and linked but not redistributed as a CC-BY derivative",
+    "Excluded tier covers: Cancer Research UK all-rights-reserved, NCQA/HEDIS proprietary, any source with no clear license, and any individual-level or controlled-access data",
+    "OECD Health Statistics entries are marked VERIFY with instructions to confirm per-table CC-BY status before use; no OECD table is classified accepted without confirmed table-specific CC-BY evidence",
+    "Merges a fixed written NC/SA policy decision stating whether NC/SA sources are ever redistributed (default: cite-only/exclude) so triage applies a rule, not ad-hoc judgment",
+    "Reviewed and recorded; no individual-level or controlled-access source appears as in-scope (guardrail 1 honored)"
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/screening-coverage-trends-guardrails-001.json",
+    "CLAUDE.md"
+  ],
+  "output": "A committed source catalog document (v0) listing all candidate cancer-screening-coverage sources with per-source publisher, indicator coverage, aggregation level, vintage, verified license classification (accepted/cite-only/excluded), permitsDerivatives evidence with clause/URL, and a merged written NC/SA policy decision that triage applies as a fixed rule.",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}
