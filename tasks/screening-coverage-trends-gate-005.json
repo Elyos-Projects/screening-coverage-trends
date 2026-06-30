@@ -1,0 +1,37 @@
+{
+  "id": "screening-coverage-trends-gate-005",
+  "title": "Apply gate end-to-end to ONE accepted source (US breast/mammography series)",
+  "project": "screening-coverage-trends",
+  "type": "data",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["cancer", "public-health", "open-data", "data-science"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "dataset",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "M0 must prove the compliance and data pipeline gates work end-to-end on at least one accepted source before any scale-out. The proposed pilot is a US breast/mammography 'up-to-date' screening coverage series from BRFSS or NHIS — both US public-domain sources. Passing the full gate means: license verified and recorded, aggregate-only access confirmed, immutable checksummed snapshot committed, schema-valid series emitted, harmonization score at least 90, and suppression honored. This proves the pattern that all M1/M2 series will follow. Depends on source catalog (002) and canonical schema (004).",
+  "objective": "Apply the full compliance and data gate end-to-end to one accepted US public-domain source (BRFSS or NHIS breast/mammography national series): verify license, record gate artifact, fetch published aggregate, commit immutable snapshot with SHA-256, harmonize to canonical schema, emit a schema-valid series with harmonizationScore >= 90, and confirm reproducibility from the snapshot in CI.",
+  "acceptanceCriteria": [
+    "One accepted US public-domain source (BRFSS or NHIS breast/mammography 'up-to-date' national series) selected; license verified as US public domain (CC0-equivalent) with provenance recorded",
+    "Gate artifact committed: license id, URL, permitsDerivatives: true confirmation with cited clause, aggregation-level confirmation (published aggregates only, no micro-data), suppression-rule documentation, and retrieval metadata",
+    "Immutable source snapshot committed with SHA-256 checksum and Wayback Machine save URL; snapshot is byte-stable and referenced from the series record",
+    "Schema-valid series emitted conforming to the canonical trend-series schema (task 004): all required fields populated, basis set to self-report or measured as appropriate, denominatorDef stated, provenanceComplete: true",
+    "harmonizationScore >= 90 for the emitted series",
+    "Suppression rules from the source honored; no suppressed cells published or re-derived",
+    "CI reproduces the series byte-stably from the committed snapshot with no network access to the live source; provenance-coverage gate passes",
+    "License reviewer + statistical reviewer sign-off recorded before merge"
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/screening-coverage-trends-guardrails-001.json",
+    "tasks/screening-coverage-trends-sources-002.json",
+    "tasks/screening-coverage-trends-schema-004.json",
+    "CLAUDE.md"
+  ],
+  "output": "A committed gate + provenance artifact (gate record, license record, immutable snapshot with SHA-256 and Wayback URL) and a schema-valid breast/mammography trend series with harmonizationScore >= 90, reproducible from the snapshot in CI; gate + statistical reviewers sign-off recorded.",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "screening-coverage-trends-partner-018",
+  "title": "Secure beneficiary + adoption plan (verifiedNeed flips true)",
+  "project": "screening-coverage-trends",
+  "type": "research",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["cancer", "public-health", "project-governance"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "Elyos measures success as delivered-not-merged. A named beneficiary — a public-health program, advocacy org, newsroom, library, or OER channel — must agree to adopt/use a specific deliverable before the project reaches its Definition of Shipped. Until a beneficiary is named, verifiedNeed remains false on all tasks. This task formalizes the beneficiary acquisition outcome: documents the named partner, their commitment, and the adoption plan. The build-vs-mothball rule applies: if no beneficiary is confirmed by 2027-03-31, the project pivots to an OER/open-data channel as a reference deed or mothballs to maintenance-only. Gated on having deliverables ready (data dictionary 010, explainers 015, dashboard 017).",
+  "objective": "Secure a named beneficiary organization that commits to adopting or using at least one project deliverable; document their commitment and an adoption plan; flip verifiedNeed to true for the relevant tasks; record the build-vs-mothball outcome decision if no beneficiary is confirmed by 2027-03-31.",
+  "acceptanceCriteria": [
+    "A named beneficiary organization is secured: a public-health program, patient-advocacy org, newsroom, library, OER channel, or open-data portal that has confirmed they will review and use at least one specific project deliverable",
+    "Beneficiary commitment is documented: organization name, contact, the specific deliverable(s) they will adopt, their intended use, and any conditions stated",
+    "A steward is assigned and named: the person who will own the beneficiary relationship, track adoption, and record the adoption-evidence event",
+    "Adoption plan documents: how the beneficiary will receive the deliverable, how adoption will be evidenced (citation in outreach materials, published article, course module, etc.), and the evidence-recording responsibility",
+    "verifiedNeed flips to true in the relevant task JSON files once this task is complete and the beneficiary is confirmed",
+    "If no beneficiary is confirmed by 2027-03-31: the build-vs-mothball decision is recorded in governance — either pivot to an OER/open-data channel as a reference deed (dataset + toolkit deposited with provenance) or mothball to maintenance-only; the decision is documented and cannot be deferred past the deadline",
+    "Steward and Maintainer sign-off recorded"
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/screening-coverage-trends-guardrails-001.json",
+    "tasks/screening-coverage-trends-outreach-006.json",
+    "tasks/screening-coverage-trends-datasheet-010.json",
+    "tasks/screening-coverage-trends-explainer-015.json",
+    "tasks/screening-coverage-trends-dashboard-017.json",
+    "CLAUDE.md"
+  ],
+  "output": "A committed adoption plan document naming the beneficiary, their commitment, steward assignment, adoption evidence plan, and evidence-recording approach; verifiedNeed updated to true in relevant task JSONs; or, if deadline passed without a beneficiary, the build-vs-mothball decision recorded in governance.",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}

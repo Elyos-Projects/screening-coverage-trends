@@ -1,0 +1,35 @@
+{
+  "id": "screening-coverage-trends-intl-023",
+  "title": "Expand international comparisons to more licensed countries",
+  "project": "screening-coverage-trends",
+  "type": "data",
+  "lane": "donated",
+  "priority": "low",
+  "domain": ["cancer", "public-health", "open-data", "data-science", "international"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "dataset",
+  "tokenEstimate": "large",
+  "status": "open",
+  "context": "Task 012 adds at least one licensed international comparison series. This backlog/future task expands the international coverage to additional licensed countries beyond the initial selection, subject to per-source license gate confirmation for each new country/source. Each new international source requires its own gate artifact, definition-difference documentation, and statistical review. WHO GHO and IARC/GLOBOCAN remain cite-only per the NC/SA policy regardless of how many countries are added. Builds on the initial international work (012) and requires the same license gate rigor as all other sources.",
+  "objective": "Expand the licensed international cancer-screening-coverage comparison dataset to additional countries beyond the initial selection in task 012, subject to per-source license gate confirmation for each new addition. Definition differences must be documented per source. NC/SA sources remain cite-only.",
+  "acceptanceCriteria": [
+    "Each new international source added has a committed gate artifact confirming: license id, URL, permitsDerivatives: true with cited clause, aggregation-level confirmation, suppression-rule documentation, and retrieval metadata",
+    "Definition differences for each new country series are explicitly documented in the dataset metadata and caveat layer: age bands, invitation vs. opportunistic system, modality differences, denominator definition differences vs. existing series",
+    "WHO GHO (CC BY-NC-SA 3.0 IGO) and IARC/GLOBOCAN (non-commercial) do not appear as redistributed values for any new country; the NC/SA policy applies uniformly regardless of expansion scale",
+    "All new international series are schema-valid per the canonical schema (task 004): harmonizationScore >= 90, basis labeled, provenanceComplete: true, suppression honored per source rules",
+    "CI reproduces all new international series byte-stably from committed snapshots; 100% provenance coverage and license-status gate pass for every new series",
+    "License/provenance reviewer and statistical reviewer sign-off recorded for each new source addition before publication"
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/screening-coverage-trends-guardrails-001.json",
+    "tasks/screening-coverage-trends-sources-002.json",
+    "tasks/screening-coverage-trends-intl-012.json",
+    "CLAUDE.md"
+  ],
+  "output": "Expanded published dataset with additional licensed international cancer-screening-coverage comparison series: per-source gate artifacts committed, definition differences documented, WHO GHO/IARC confirmed cite-only, schema-valid with harmonizationScore >= 90, reproducible from committed snapshots; license and statistical reviewer sign-offs recorded per new source.",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}

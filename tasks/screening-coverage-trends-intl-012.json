@@ -1,0 +1,36 @@
+{
+  "id": "screening-coverage-trends-intl-012",
+  "title": "Add >=1 licensed international comparison series (UK OGL / Eurostat / OECD / AIHW / StatCan)",
+  "project": "screening-coverage-trends",
+  "type": "data",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["cancer", "public-health", "open-data", "data-science", "international"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "dataset",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "International context enriches the US trend dataset by showing whether patterns are US-specific or shared across similar healthcare systems. However, international comparisons carry definition pitfalls: each country's screening program has different age ranges, modalities, invitation systems, and coverage definitions that must not be silently compared. Only licensed sources (UK OGL v3, Eurostat, OECD per-table CC-BY-confirmed, AIHW CC-BY, StatCan open licence) may be redistributed. WHO GHO and IARC/GLOBOCAN remain cite-only per the NC/SA policy and must not appear in the redistributed dataset. Builds on the four-indicator US dataset (011).",
+  "objective": "Add at least one licensed international comparison series to the dataset, from sources with confirmed redistribution rights (UK OGL v3, Eurostat, OECD per-table CC-BY, AIHW CC-BY, or StatCan open licence). Definition differences versus US series must be explicitly documented. WHO GHO and IARC/GLOBOCAN must remain cite-only and not appear as CC-BY derivatives in the redistributed dataset.",
+  "acceptanceCriteria": [
+    "At least one licensed international screening-coverage series added to the dataset; source license confirmed as permitting redistribution (UK OGL v3, or Eurostat open, or OECD per-table CC-BY confirmed, or AIHW CC-BY confirmed, or StatCan open licence); gate artifact committed with license id, URL, and permitsDerivatives evidence",
+    "Definition differences between the international series and US series are explicitly documented in the dataset metadata and caveat layer: different age bands, invitation vs. opportunistic system, modality differences, denominator definition differences — not silently compared",
+    "WHO GHO (CC BY-NC-SA 3.0 IGO) and IARC/GLOBOCAN (non-commercial) do not appear as redistributed values in the dataset; any reference to those figures is a citation/link only, consistent with the NC/SA policy (task 002)",
+    "All international series are schema-valid per the canonical schema (task 004): harmonizationScore >= 90, basis labeled, provenanceComplete: true, suppression honored per source rules",
+    "International series are clearly scoped by geography and population to match their source definitions; no cross-series comparison is made without an explicit harmonization note",
+    "CI reproduces all international series byte-stably from committed snapshots; 100% provenance coverage and license-status gate pass",
+    "License/provenance reviewer and statistical reviewer sign-off recorded before publication"
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/screening-coverage-trends-guardrails-001.json",
+    "tasks/screening-coverage-trends-sources-002.json",
+    "tasks/screening-coverage-trends-indicators-011.json",
+    "CLAUDE.md"
+  ],
+  "output": "At least one licensed international cancer-screening-coverage comparison series added to the published dataset: license gate artifact committed, definition differences explicitly documented, WHO GHO/IARC confirmed cite-only, schema-valid with harmonizationScore >= 90, reproducible from committed snapshots in CI; license and statistical reviewer sign-offs recorded.",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}

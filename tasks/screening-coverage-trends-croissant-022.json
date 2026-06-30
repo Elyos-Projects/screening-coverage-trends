@@ -1,0 +1,34 @@
+{
+  "id": "screening-coverage-trends-croissant-022",
+  "title": "Croissant ML metadata for the open dataset",
+  "project": "screening-coverage-trends",
+  "type": "code",
+  "lane": "donated",
+  "priority": "low",
+  "domain": ["cancer", "open-data", "data-science", "machine-learning"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "Croissant ML is an emerging standard for machine-readable dataset metadata that improves discoverability and interoperability for ML/data-science use cases, complementing the schema.org/Dataset metadata from task 010. Adding Croissant metadata makes the screening-coverage-trends dataset easier to find and use in data-science tooling. This is a backlog/future item pending a decision on whether to adopt now or defer. It is low risk as it is pure metadata with no impact on the dataset content, provenance, or patient-facing content.",
+  "objective": "Add Croissant ML metadata to the open cancer-screening-coverage trend dataset, describing its structure, fields, and distributions in a machine-readable format compatible with Croissant ML tooling. The metadata must accurately reflect the canonical schema and preserve provenance and license information.",
+  "acceptanceCriteria": [
+    "Croissant ML metadata file produced conforming to the Croissant ML specification; describes the dataset's fields (matching the canonical trend-series schema from task 004), data distributions, and record structure",
+    "Metadata accurately records the dataset's license (CC-BY-4.0), publisher, and provenance references consistent with the schema.org/Dataset metadata from task 010",
+    "Croissant metadata does not introduce any new data claims, figures, or interpretations beyond what appears in the canonical dataset; it is purely descriptive metadata",
+    "Croissant metadata passes validation using available Croissant ML tooling or schema validator",
+    "Metadata is committed to the repo alongside the dataset and referenced from the data dictionary (task 010)",
+    "Maintainer and license reviewer sign-off recorded before merge"
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/screening-coverage-trends-datasheet-010.json",
+    "tasks/screening-coverage-trends-schema-004.json",
+    "CLAUDE.md"
+  ],
+  "output": "A merged PR adding a Croissant ML metadata file for the open cancer-screening-coverage trend dataset: Croissant-valid, consistent with the canonical schema and existing schema.org/Dataset metadata, license and provenance preserved; Maintainer and license reviewer sign-offs recorded.",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

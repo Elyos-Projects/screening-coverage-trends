@@ -1,0 +1,35 @@
+{
+  "id": "screening-coverage-trends-repo-003",
+  "title": "Repo skeleton (TS/ESM/pnpm) + CI with provenance-coverage & license-status gates",
+  "project": "screening-coverage-trends",
+  "type": "code",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["cancer", "public-health", "open-data", "data-science", "devops"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "The project needs a TS/ESM/pnpm workspace repo that enforces the binding guardrails in CI from day one, before any data or content is produced. The CI gates are not optional niceties: a green build must mean provenance-coverage = 100%, license-status passing, schema-valid output, and reproducible-from-snapshots. These gates are defined in the guardrail spec (task 001) and must be wired here so later tasks build on a credible foundation. No beneficiary or expert reviewers are yet secured.",
+  "objective": "Stand up the TS/ESM/pnpm monorepo skeleton with a CI pipeline that enforces the project's binding build-breakers: 100% provenance coverage, license-status gate, schema validity, reproducible-from-snapshots, small-cell guard, and helpline-verification gate. The skeleton must be runnable locally and in CI with no data yet present, and must pass a clean build with the gate scaffolding in place.",
+  "acceptanceCriteria": [
+    "TS/ESM/pnpm workspace initialised with packages for pipeline, schema, and explainers; pnpm build && pnpm test && pnpm lint passes on a clean checkout",
+    "CI (GitHub Actions or equivalent) is wired and runs on push/PR; build is reproducible from cached source snapshots",
+    "Provenance-coverage gate implemented as a build-breaker: any dataset value or chart artifact lacking a resolvable source ref fails the build with a clear error",
+    "License-status gate implemented: any series whose source lacks a recorded accepted/cleared license entry fails the build",
+    "Schema-validity gate: output dataset validates against the canonical JSON Schema (stub schema acceptable until task 004 lands); invalid output fails the build",
+    "Small-cell guard scaffolded: any published cell below the configured suppression threshold fails the build",
+    "Helpline-verification gate scaffolded: any support/helpline pointer lacking a dated verification record fails the build",
+    "README references PLAN.md, TASKS.md, and CLAUDE.md; repo contains no secrets, tokens, or API keys; MIT licence file committed"
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/screening-coverage-trends-guardrails-001.json",
+    "CLAUDE.md"
+  ],
+  "output": "A merged PR adding the TS/ESM/pnpm monorepo skeleton with CI wired to enforce the six binding build-breakers (provenance-coverage, license-status, schema-validity, reproducible-from-snapshots, small-cell guard, helpline-verification gate); pnpm build && pnpm test && pnpm lint green.",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

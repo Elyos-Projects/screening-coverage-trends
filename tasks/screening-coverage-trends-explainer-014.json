@@ -1,0 +1,38 @@
+{
+  "id": "screening-coverage-trends-explainer-014",
+  "title": "\"How to read a screening statistic\" explainer (education only)",
+  "project": "screening-coverage-trends",
+  "type": "writing",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["cancer", "public-health", "health-communication", "data-literacy"],
+  "riskTier": "high",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "M3 is hard-gated on securing both a credentialed oncology clinician and a patient advocate as blocking reviewers. This explainer is the foundational plain-language piece that must ship before indicator-specific trend explainers (task 015). It teaches population-level data literacy for screening statistics: what a coverage rate is, what basis (self-report/measured/model-based) means, what a confidence interval conveys, how to read a trend, and what these statistics do not say. It is general information and education only — never medical advice, never a personalized recommendation. The persistent 'not medical advice — consult your care team' notice is mandatory and non-negotiable. Cannot start until oncology clinician AND patient-advocate reviewers are secured.",
+  "objective": "Write the 'how to read a screening statistic' plain-language educational explainer: covering what a screening coverage rate is, the meaning of basis (self-report/measured/model-based), confidence intervals, trends, and what population-level statistics do not say about individuals. Must pass the full misread checklist and carry the persistent 'not medical advice' notice. Requires oncologist + advocate sign-off (both, blocking) before publication.",
+  "acceptanceCriteria": [
+    "ENTRY GATE: oncology clinician AND patient-advocate reviewers both secured (named, confirmed) before this task starts; task is blocked until both are in place",
+    "Explainer is plain-language education only; explains population-level screening coverage statistics (what a rate is, self-report vs. measured vs. model-based, confidence intervals, trend interpretation) without giving any personalized recommendation, eligibility ruling, or diagnosis guidance",
+    "Carries a persistent, prominent 'This is general information, not medical advice — consult your care team' notice on every page/section; notice is not buried in a footnote",
+    "Passes the full misread checklist: denominator stated and explained; basis (self-report/measured/model-based) labeled and explained; model-based small-area estimates flagged as estimates not counts; no causal verbs used on associational trend data; no advice verbs; guideline bodies cited with name, version, and date where referenced",
+    "No-causal-verb lint passes: no claim that a trend 'caused' or 'led to' any outcome; language is explicitly correlational and descriptive",
+    "Not-medical-advice lint passes: no language telling readers what screening to seek, when to get screened, or whether they should be screened",
+    "WCAG 2.2 AA accessibility requirements met; plain-language readability target met (target reading level appropriate for the intended public audience)",
+    "Comprehension check conducted: >= 80% correct on pre-registered 'what this rate does/doesn't say' check items (advocate panel or small reader test)",
+    "Oncologist sign-off recorded (clinical accuracy, no advice-creep) — BLOCKING",
+    "Patient-advocate sign-off recorded (comprehension, tone, patient-serving framing) — BLOCKING"
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/screening-coverage-trends-guardrails-001.json",
+    "tasks/screening-coverage-trends-datasheet-010.json",
+    "CLAUDE.md"
+  ],
+  "output": "A published 'how to read a screening statistic' plain-language educational explainer: misread checklist passed, persistent 'not medical advice' notice present, WCAG 2.2 AA met, comprehension check >= 80%; both oncologist and patient-advocate sign-offs recorded (blocking); no personalized recommendation, eligibility ruling, or diagnosis guidance.",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}

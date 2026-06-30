@@ -1,0 +1,37 @@
+{
+  "id": "screening-coverage-trends-county-024",
+  "title": "County/place small-area trends (PLACES, model-based) with strong caveats",
+  "project": "screening-coverage-trends",
+  "type": "data",
+  "lane": "donated",
+  "priority": "low",
+  "domain": ["cancer", "public-health", "open-data", "data-science"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "dataset",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "CDC PLACES provides model-based small-area estimates of cancer screening coverage at county and census-tract levels. These are more granular than national/state data and may be especially useful to local public-health staff targeting outreach. However, model-based small-area estimates carry important caveats: they are model outputs with uncertainty, not survey counts of identifiable people; small-area estimates have wider confidence intervals; and the small-cell guard is especially important at county/place level. The model-based-small-area caveat (from the caveat layer, task 008) must be prominently applied. This is a backlog/future task, lower priority than the national/state series.",
+  "objective": "Add county/place-level small-area trend series from CDC PLACES (model-based estimates) to the dataset, with mandatory model-based-small-area caveats, uncertainty shown, small-cell guard enforced, and no implication that model estimates represent counts of identifiable people.",
+  "acceptanceCriteria": [
+    "CDC PLACES data used only for the aggregate county/census-tract-level model-based estimates (published aggregate files); no micro-data or individual-level records accessed",
+    "License confirmed: CDC PLACES is US public domain (CC0-equivalent); gate artifact committed with provenance",
+    "Every county/place series carries a mandatory model-based-small-area caveat in the structured caveats[] array: stating explicitly that estimates are model outputs with uncertainty, not survey counts, and not counts of identifiable people",
+    "Uncertainty (confidence intervals) displayed for every county/place estimate; wide confidence intervals at small geographies noted explicitly",
+    "Small-cell guard strictly enforced: any county/place cell below the configured minimum-cell or minimum-denominator threshold is suppressed and labeled, never published or imputed",
+    "No cross-dataset linkage: PLACES estimates not linked with other datasets in a way that could re-identify; no disaggregation below the published aggregation level",
+    "CI reproduces all county/place series byte-stably from committed snapshots; 100% provenance coverage and license-status gate pass; small-cell guard CI gate enforces suppression threshold",
+    "Statistical reviewer and license/provenance reviewer sign-off recorded before publication"
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/screening-coverage-trends-guardrails-001.json",
+    "tasks/screening-coverage-trends-caveats-008.json",
+    "tasks/screening-coverage-trends-indicators-011.json",
+    "CLAUDE.md"
+  ],
+  "output": "Published county/place small-area trend series from CDC PLACES (model-based) with mandatory model-based-small-area caveats, uncertainty shown, small-cell guard enforced, no cross-dataset linkage, schema-valid, reproducible from committed snapshots in CI; statistical and license reviewer sign-offs recorded.",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}

@@ -1,0 +1,37 @@
+{
+  "id": "screening-coverage-trends-dashboard-017",
+  "title": "Static accessible dashboard over the open dataset (provenance + uncertainty shown)",
+  "project": "screening-coverage-trends",
+  "type": "code",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["cancer", "public-health", "data-visualization", "accessibility"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "A static, accessible dashboard over the open dataset makes the screening-coverage trends visually accessible to public-health staff, journalists, and data reusers without requiring them to process raw files. Because the dashboard is built on the open dataset and shows population-level aggregate statistics, it is medium risk rather than high — it does not give medical advice and is not patient-facing in the same way as the written explainers. However, every chart must be provenance-linked, must show uncertainty, must not imply causation, and must meet WCAG 2.2 AA. Depends on M2 indicators (011) and M3 explainers (015) for chart context.",
+  "objective": "Build a static, accessible dashboard over the open cancer-screening-coverage trend dataset: provenance-linked charts with uncertainty shown, no causal/advice implications, WCAG 2.2 AA, works without a backend. Charts display the population-level aggregate trend data and link to the explainers for interpretation context.",
+  "acceptanceCriteria": [
+    "Dashboard is a static site (no runtime backend, no server-side state, no database of people, no PII) built only on the committed open dataset",
+    "Every chart is provenance-linked: each visualization includes a visible source citation linking to the specific dataset series and its provenance record",
+    "Uncertainty shown on every trend chart: confidence/credible intervals displayed; suppressed cells shown as suppressed (not as zero or as an estimated value)",
+    "No chart implies causation: chart titles and labels use descriptive language ('Breast screening coverage trend, US 2010-2023') not causal language ('Why coverage fell'); no causal narrative in axis labels or chart annotations",
+    "No chart or label gives medical advice, personalized screening recommendations, or eligibility guidance; population-level framing throughout",
+    "WCAG 2.2 AA accessibility requirements met: color contrast, keyboard navigation, screen-reader compatibility, alternative text for all charts",
+    "Dashboard works without a backend and can be deployed as a static site (e.g., GitHub Pages); no credentials or API keys required at runtime",
+    "Statistical and accessibility review passed; sign-off recorded before merge"
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/screening-coverage-trends-guardrails-001.json",
+    "tasks/screening-coverage-trends-indicators-011.json",
+    "tasks/screening-coverage-trends-explainer-015.json",
+    "CLAUDE.md"
+  ],
+  "output": "A merged PR adding a static accessible dashboard over the open cancer-screening-coverage trend dataset: all charts provenance-linked, uncertainty displayed, no causal/advice implications, WCAG 2.2 AA met, no backend required; statistical and accessibility review sign-offs recorded.",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

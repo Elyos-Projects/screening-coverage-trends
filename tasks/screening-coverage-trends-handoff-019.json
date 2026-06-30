@@ -1,0 +1,34 @@
+{
+  "id": "screening-coverage-trends-handoff-019",
+  "title": "Beneficiary adopts/uses a deliverable; record the outcome (the deed)",
+  "project": "screening-coverage-trends",
+  "type": "maintenance",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["cancer", "public-health", "project-governance"],
+  "riskTier": "high",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "Elyos defines 'delivered, not merged': the project's Definition of Shipped requires a named beneficiary to demonstrably adopt or use a deliverable, with externally-verifiable evidence recorded by the steward. Self-reported use does not count. For any patient-facing piece that is used, the clinician + advocate sign-off and 'not medical advice' framing must be confirmed in the shipped form — the framing cannot be stripped or altered by the adopter before we record the deed. This is M5 — the deed itself.",
+  "objective": "Record the adoption event: the named beneficiary (from task 018) demonstrably adopts or uses at least one project deliverable, with externally-verifiable evidence recorded by the steward. For any patient-facing content used, confirm that the clinician + advocate sign-off and 'not medical advice' framing are intact in the shipped form.",
+  "acceptanceCriteria": [
+    "The named beneficiary (secured in task 018) demonstrably adopts or uses at least one project deliverable (dataset, explainer, dashboard, or data dictionary) with externally-verifiable evidence",
+    "Adoption evidence is externally verifiable: a citation in the beneficiary's outreach or program materials, a published article using the data, a course module incorporating the explainer, a confirmation letter or written statement, or equivalent — self-reported use without external evidence does not count",
+    "Steward records the adoption event with: date, beneficiary name, deliverable used, evidence type and URL/reference, and any downstream impact observed",
+    "For any patient-facing deliverable (explainers 014/015, helpline pointers 016) adopted by the beneficiary: steward confirms that the oncologist + advocate sign-off is on record for the specific version used and that the 'not medical advice' framing is present and unaltered in the form the beneficiary shipped it",
+    "Adoption record committed to the governance ledger: permanent record of who used what, when, and how adoption was evidenced",
+    "Steward + Clinician (if patient-facing) + Maintainer sign-off recorded"
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/screening-coverage-trends-guardrails-001.json",
+    "tasks/screening-coverage-trends-partner-018.json",
+    "CLAUDE.md"
+  ],
+  "output": "A committed governance ledger entry recording the adoption event: beneficiary name, deliverable used, externally-verifiable evidence reference, adoption date, steward confirmation; for patient-facing pieces, confirmation that clinician + advocate sign-off is on record for the used version and 'not medical advice' framing is intact in the shipped form.",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}

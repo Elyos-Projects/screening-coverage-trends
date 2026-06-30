@@ -1,0 +1,37 @@
+{
+  "id": "screening-coverage-trends-indicators-011",
+  "title": "Add cervical, colorectal, lung indicators (US national + sub-national)",
+  "project": "screening-coverage-trends",
+  "type": "data",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["cancer", "public-health", "open-data", "data-science"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "dataset",
+  "tokenEstimate": "large",
+  "status": "open",
+  "context": "M2 scales the pipeline from one indicator (breast/mammography) to all four screenable cancers: breast, cervical, colorectal, and lung. Each indicator has distinct guideline bodies, denominator definitions, and data-source considerations. Lung screening in particular uses a high-risk-eligible denominator (not the general population) that must be clearly documented to prevent misreading. All new indicators must pass the same license gate, provenance requirements, suppression rules, and harmonizationScore threshold as the M1 breast dataset. Builds on the pipeline (007) and caveat layer (008).",
+  "objective": "Extend the pipeline to produce schema-valid trend datasets for cervical, colorectal, and lung screening coverage (joining breast from M1), US national and available sub-national geographies, from accepted licensed sources. Each indicator must have consistent definitions/denominators, basis labels, uncertainty, suppression, and provenance; harmonizationScore >= 90 per series. Lung's high-risk-eligible denominator must be distinctly defined and documented.",
+  "acceptanceCriteria": [
+    "Cervical screening trend dataset produced for US national + available sub-national geographies from accepted licensed sources; denominator and age-band definition stated; basis labeled; break-in-series events flagged",
+    "Colorectal screening trend dataset produced for US national + available sub-national geographies from accepted licensed sources; denominator definition (which modalities included) stated; basis labeled; break-in-series events flagged",
+    "Lung screening trend dataset produced for US national + available sub-national geographies from accepted licensed sources; uses a high-risk-eligible denominator (not the general population); denominator definition explicitly documented with a caveat stating that the eligible denominator differs from general-population denominators used for other indicators",
+    "Breast/mammography dataset from M1 remains valid and consistent with the expanded four-indicator set; any definition differences across indicators explicitly documented rather than silently compared",
+    "All four indicator datasets pass the canonical schema (task 004): schema-valid, harmonizationScore >= 90 per series, provenanceComplete: true, basis labeled, suppression applied, small-cell guard enforced",
+    "CI reproduces all four indicator datasets byte-stably from committed snapshots; 100% provenance coverage and license-status gate pass for all new series",
+    "Statistical reviewer and license/provenance reviewer sign-off recorded for all four indicators before publication"
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/screening-coverage-trends-guardrails-001.json",
+    "tasks/screening-coverage-trends-pipeline-007.json",
+    "tasks/screening-coverage-trends-caveats-008.json",
+    "tasks/screening-coverage-trends-dataset-009.json",
+    "CLAUDE.md"
+  ],
+  "output": "Published open trend dataset covering all four screening indicators (breast, cervical, colorectal, lung), US national + sub-national, from accepted licensed sources: schema-valid, harmonizationScore >= 90 per series, basis labeled, suppression applied, lung's high-risk-eligible denominator explicitly documented, reproducible from committed snapshots in CI; statistical and license reviewer sign-offs recorded.",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}

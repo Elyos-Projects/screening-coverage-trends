@@ -1,0 +1,41 @@
+{
+  "id": "screening-coverage-trends-explainer-015",
+  "title": ">=2 indicator trend explainers (education only, guidance pointers)",
+  "project": "screening-coverage-trends",
+  "type": "writing",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["cancer", "public-health", "health-communication", "data-literacy"],
+  "riskTier": "high",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "Following the foundational 'how to read a screening statistic' explainer (task 014), this task produces explainers for at least two specific screening indicators. Each explainer interprets what the trend data for that indicator shows — what it does and does not say — attributes guideline context to the appropriate authoritative bodies (USPSTF, ACS, national programs) with citation and version/date, and links to the verified support/helpline pointers (task 016). These are education only, never advice. Every figure must link back to its source in the M1/M2 dataset. Both oncologist and patient-advocate sign-offs are blocking prerequisites. Cannot start until oncology clinician AND patient-advocate reviewers are secured.",
+  "objective": "Write plain-language educational trend explainers for at least two screening indicators (e.g., breast/mammography and one other). Each explainer must explain what the trend does and does not say, attribute guideline context to authoritative bodies with citation and version/date, link every figure to its dataset provenance, link verified support/helpline pointers, carry the 'not medical advice' notice, and pass the full misread checklist. Both oncologist and advocate sign-offs are blocking.",
+  "acceptanceCriteria": [
+    "ENTRY GATE: oncology clinician AND patient-advocate reviewers both secured (named, confirmed) before this task starts; task is blocked until both are in place; foundational explainer (task 014) must be published first",
+    "At least two indicator trend explainers produced (e.g., breast/mammography and one of cervical, colorectal, or lung); each clearly scoped to its indicator and population denominator",
+    "Each explainer explains what the trend does and does not say: what a change in coverage rate means at the population level, what it does not imply about causes, and what it does not say about any individual's situation",
+    "Guideline context attributed to USPSTF, ACS, or relevant national bodies with citation, version, and date as education about existing guidelines — never restated as the project's own advice; framed as 'USPSTF recommends...' not 'you should...'",
+    "Every figure and statistic cited is provenance-linked to its specific series in the M1/M2 dataset; no unsourced claims appear",
+    "Verified support/helpline pointers (from task 016) linked in each explainer",
+    "Persistent 'This is general information, not medical advice — consult your care team' notice present on every explainer",
+    "Full misread checklist passed for each explainer: denominator stated, basis labeled, model-based flagged, no causal verbs, no advice verbs, guideline body cited with version/date",
+    "WCAG 2.2 AA and plain-language readability target met for each explainer",
+    "Oncologist sign-off recorded for each explainer (clinical accuracy, no advice-creep) — BLOCKING",
+    "Patient-advocate sign-off recorded for each explainer (comprehension, tone, patient-serving framing) — BLOCKING"
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/screening-coverage-trends-guardrails-001.json",
+    "tasks/screening-coverage-trends-indicators-011.json",
+    "tasks/screening-coverage-trends-explainer-014.json",
+    "tasks/screening-coverage-trends-helpline-016.json",
+    "CLAUDE.md"
+  ],
+  "output": "At least two published plain-language educational indicator trend explainers: misread checklist passed, every figure provenance-linked to the M1/M2 dataset, guideline context attributed to authoritative bodies with citation/version/date, verified support pointers linked, 'not medical advice' notice present, WCAG 2.2 AA met; both oncologist and patient-advocate sign-offs recorded (blocking) for each explainer.",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}

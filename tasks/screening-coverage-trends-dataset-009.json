@@ -1,0 +1,36 @@
+{
+  "id": "screening-coverage-trends-dataset-009",
+  "title": "First trend dataset: breast/mammography, US national + states (reproducible)",
+  "project": "screening-coverage-trends",
+  "type": "data",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["cancer", "public-health", "open-data", "data-science"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "dataset",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "M1 culminates in publishing the first open trend dataset: breast/mammography 'up-to-date' coverage, US national and states, from accepted public-domain sources (BRFSS, NHIS). This dataset is the project's first concrete open-data deliverable — a reproducible, schema-valid, provenance-covered harmonized dataset that downstream tasks (data dictionary, explainers, dashboard) build on. It must pass statistical and license/provenance review before publication. Population-level aggregate data only; no individual-level records.",
+  "objective": "Produce and publish the first open trend dataset: breast/mammography 'up-to-date' screening coverage trend, US national + all states, from accepted PD sources, using the pipeline (007) and caveat layer (008). Every series must be schema-valid, provenance-covered, harmonization score >= 90, with basis labeled, break-in-series and suppression flags applied, and small-cell guard enforced. Dataset must be reproducible from committed snapshots in CI.",
+  "acceptanceCriteria": [
+    "Dataset covers breast/mammography 'up-to-date' screening coverage trend for US national and all available states from accepted public-domain sources (BRFSS and/or NHIS); no series from cite-only or excluded sources",
+    "Every series is schema-valid per the canonical trend-series schema (task 004): all required fields populated, basis set to self-report or measured as appropriate, denominatorDef stated, provenanceComplete: true",
+    "harmonizationScore >= 90 for every published series",
+    "Self-report basis labeled on all applicable series; break-in-series flags applied at survey redesigns or guideline/denominator changes; suppression flags applied for below-threshold cells",
+    "Small-cell guard enforced: no published cell below the configured minimum-cell or minimum-denominator threshold; suppressed cells labeled, never imputed",
+    "Dataset is reproducible byte-stably from committed snapshots in CI; provenance-coverage gate (100%) and license-status gate both pass",
+    "Statistical reviewer and license/provenance reviewer sign-off both recorded before publication"
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/screening-coverage-trends-guardrails-001.json",
+    "tasks/screening-coverage-trends-pipeline-007.json",
+    "tasks/screening-coverage-trends-caveats-008.json",
+    "CLAUDE.md"
+  ],
+  "output": "A published (committed and CI-green) open trend dataset of breast/mammography 'up-to-date' screening coverage for US national + states: schema-valid, provenance-covered, harmonizationScore >= 90 per series, basis labeled, break-in-series and suppression flags applied, small-cell guard enforced, reproducible from committed snapshots; statistical and license reviewer sign-offs recorded.",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}

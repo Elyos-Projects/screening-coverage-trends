@@ -1,0 +1,36 @@
+{
+  "id": "screening-coverage-trends-schema-004",
+  "title": "Canonical trend-series schema + provenance model (JSON Schema)",
+  "project": "screening-coverage-trends",
+  "type": "code",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["cancer", "public-health", "open-data", "data-science"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "Every dataset value, chart, and explainer figure in the project is a projection of a single canonical trend-series model. Publishing that model as a JSON Schema (rather than implicit code conventions) makes validation machine-enforceable in CI and prevents dataset, metadata, charts, and explainer figures from drifting apart. The schema must capture all statistical caveats — particularly the basis field (self-report/measured/model-based), suppression, and CI provenance — that are the primary statistical-misread risks. This builds on the repo skeleton (task 003) and must be wired into its CI gates.",
+  "objective": "Publish the canonical trend-series JSON Schema and provenance model: define all required fields for an indicator series record including indicator, measure, population breakdowns, geography, period, value with confidence intervals and basis, denominator definition, suppression, source provenance, caveats, provenanceComplete, and harmonizationScore. Wire schema validation into CI as a build-breaker.",
+  "acceptanceCriteria": [
+    "JSON Schema defines all canonical fields: id, indicator (breast|cervical|colorectal|lung), measure, population (ageBand, sex, raceEthnicity, income, insurance, urbanRural), geography (level: nation|region|state|county|place, code, name), period (year or range), value (pct, ciLow, ciHigh, basis: self-report|measured|model-based), denominatorDef, suppression (suppressed: boolean, rule), source (id, url, version, retrievedAt, license, snapshotRef), caveats[], provenanceComplete (boolean), harmonizationScore",
+    "basis field is a required enum (self-report|measured|model-based); omitting it fails schema validation",
+    "suppression object is required; a series may not publish a value and claim suppressed:true simultaneously",
+    "A series with a missing or unresolvable source.snapshotRef fails schema validation",
+    "Provenance model specifies that every snapshot must include: source URL, publisher, retrieval timestamp, dataset version/vintage, license id + URL, SHA-256 checksum, and a Wayback Machine save URL — all as required subfields of source",
+    "Schema is wired into the CI build-breaker (replacing any stub from task 003); all synthetic test fixtures validate cleanly against it",
+    "Schema documentation explains the harmonizationScore (0–100; fraction of canonical fields populated and source-verified) and defines a minimum acceptable value of 90 for published series",
+    "Statistical reviewer sign-off recorded before merge"
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/screening-coverage-trends-guardrails-001.json",
+    "tasks/screening-coverage-trends-repo-003.json",
+    "CLAUDE.md"
+  ],
+  "output": "A merged PR adding the canonical trend-series JSON Schema and provenance model, wired into CI as a build-breaker; schema documentation explaining all fields including basis, suppression, harmonizationScore, and provenance requirements; synthetic test fixtures validating cleanly.",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

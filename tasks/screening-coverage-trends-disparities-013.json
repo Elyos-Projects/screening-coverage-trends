@@ -1,0 +1,35 @@
+{
+  "id": "screening-coverage-trends-disparities-013",
+  "title": "Suppression-safe disparities breakdowns (income/insurance/race-eth/urban-rural)",
+  "project": "screening-coverage-trends",
+  "type": "data",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["cancer", "public-health", "open-data", "data-science", "health-equity"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "dataset",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "Disparities in cancer screening coverage by income, insurance status, race/ethnicity, and urban-rural geography are among the most policy-relevant aspects of the data. However, sub-group breakdowns carry re-identification risk (small cells at fine geographies) and can be politically misused if framed as rankings or name-and-shame comparisons. The project's binding guardrails require: sub-group breakdowns only where licensed and above the min-cell/denominator threshold; below-threshold cells suppressed and labeled (never imputed); no cross-dataset linkage; neutral framing with context and caveats, no ranking or name-and-shame. Builds on the four-indicator US dataset (011).",
+  "objective": "Add suppression-safe sub-group disparities breakdowns (income, insurance status, race/ethnicity, urban-rural) to the dataset for available indicators and geographies, where licensed and above the min-cell/denominator threshold. Apply suppression rigorously; use neutral framing with context and caveats; no cross-dataset linkage.",
+  "acceptanceCriteria": [
+    "Sub-group disparities breakdowns added for at least income and insurance status dimensions, and for race/ethnicity and urban-rural where available from licensed sources; each breakdown attributed to its specific source table and license",
+    "Small-cell guard strictly enforced: any sub-group cell below the configured minimum-cell or minimum-denominator threshold is suppressed and labeled (not imputed to a value); source suppression rules honored in addition to the project's own threshold",
+    "No cross-dataset linkage: sub-group breakdowns from different sources are not merged into a combined breakdown that could re-identify; each sub-group series cites its own source independently",
+    "Neutral framing enforced: dataset metadata and caveats use descriptive language (e.g., 'lower coverage rates observed among...') with no ranking, name-and-shame, or politically-loaded characterization; context and data limitations noted",
+    "All sub-group series are schema-valid per the canonical schema (task 004): harmonizationScore >= 90, basis labeled, provenanceComplete: true, suppression field correctly populated for all cells",
+    "CI reproduces all disparities breakdowns byte-stably from committed snapshots; 100% provenance coverage and license-status gate pass; small-cell guard CI gate enforces suppression threshold",
+    "Statistical reviewer and license/provenance reviewer sign-off recorded before publication"
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/screening-coverage-trends-guardrails-001.json",
+    "tasks/screening-coverage-trends-indicators-011.json",
+    "CLAUDE.md"
+  ],
+  "output": "Published suppression-safe disparities breakdowns (income, insurance, race/ethnicity, urban-rural where available) added to the dataset: source-suppression and own-threshold rules enforced, no imputation, no cross-dataset linkage, neutral framing, schema-valid with harmonizationScore >= 90, reproducible from committed snapshots in CI; statistical and license reviewer sign-offs recorded.",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}

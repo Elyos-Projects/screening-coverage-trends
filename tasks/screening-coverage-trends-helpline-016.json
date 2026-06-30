@@ -1,0 +1,36 @@
+{
+  "id": "screening-coverage-trends-helpline-016",
+  "title": "Verified support/helpline + authoritative-guidance pointer set",
+  "project": "screening-coverage-trends",
+  "type": "research",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["cancer", "public-health", "health-communication"],
+  "riskTier": "high",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "Patient-facing content that discusses cancer screening coverage trends must link readers to verified support resources and authoritative guidance — not generic search results. The binding guardrails require that every crisis/helpline/support pointer be independently verified (number, region, hours, language) with a dated verification record before display, and re-verified on a fixed cadence. Authoritative-guidance pointers (USPSTF, ACS, national screening programs) must be cited with their specific version and date. Both oncologist and patient-advocate reviewers must confirm appropriateness before publication. This pointer set feeds directly into the explainers (tasks 014, 015).",
+  "objective": "Research, verify, and document a curated set of support/helpline pointers and authoritative-guidance pointers for use in the screening-coverage-trends explainers. Each pointer must be independently verified (number/URL, region, hours, language) with a dated verification record. Authoritative guidance pointers must cite their source body, document version, and date. Clinician and advocate must confirm appropriateness. A re-verification cadence must be established.",
+  "acceptanceCriteria": [
+    "ENTRY GATE: oncology clinician AND patient-advocate reviewers secured before this task starts",
+    "At least one curated support/helpline pointer per indicator included (e.g., cancer information helplines); each independently verified: correct phone number/URL confirmed, region confirmed, operating hours confirmed, language availability confirmed, with a dated verification record (date of verification included)",
+    "Authoritative-guidance pointers compiled for each indicator: USPSTF recommendation (version + date), ACS guideline (version + date), and relevant national screening program pointer — each cited to its specific authoritative source URL, not paraphrased or restated as the project's advice",
+    "Pointer set is formatted for embedding in explainers (task 014, 015): guidance pointers framed as 'For authoritative screening guidelines, see [body] [version] [date]'; helpline pointers framed as 'For support, contact [name] at [number/URL] [region] [hours]'",
+    "Re-verification cadence defined and documented: each pointer must be re-verified at least once per annual release cycle; a re-verification date field maintained per pointer; past-due pointers flagged for update before publication",
+    "Helpline-verification gate CI artifact created so CI can confirm each pointer in the explainers references a dated verification record",
+    "Oncologist confirms clinical appropriateness of all guidance and helpline pointers — BLOCKING",
+    "Patient-advocate confirms tone, accessibility, and that pointers are genuinely useful to the intended audience — BLOCKING"
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/screening-coverage-trends-guardrails-001.json",
+    "tasks/screening-coverage-trends-explainer-014.json",
+    "CLAUDE.md"
+  ],
+  "output": "A committed, verified support/helpline and authoritative-guidance pointer set with dated verification records per pointer, re-verification cadence defined, formatted for embedding in explainers; helpline-verification CI artifact created; oncologist and patient-advocate sign-offs recorded (both blocking).",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}
